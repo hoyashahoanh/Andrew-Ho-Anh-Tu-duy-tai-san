@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrew Hồ Anh | Tư duy tài sản</title>
+  <meta name="description" content="Portfolio cá nhân của Andrew Hồ Anh - Chuyên gia tư vấn, cố vấn tài sản bất động sản, định hướng trở thành giảng viên đào tạo trong lĩnh vực tư duy tài sản và đầu tư bất động sản." />
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0d1b2f;
+      --bg-card: rgba(255, 255, 255, 0.075);
+      --text: #f4f7fb;
+      --muted: #a9b6c8;
+      --gold: #d7ad55;
+      --gold-soft: #f3d38a;
+      --line: rgba(255, 255, 255, 0.13);
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(215, 173, 85, 0.18), transparent 34%),
+        radial-gradient(circle at 80% 10%, rgba(82, 126, 197, 0.22), transparent 32%),
+        linear-gradient(180deg, #06101d 0%, #081426 45%, #07111f 100%);
+      color: var(--text);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, iframe {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--gold), #fff0b8);
+      color: #07111f;
+      box-shadow: 0 10px 30px rgba(215, 173, 85, 0.25);
+      font-weight: 900;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.03em;
+      margin-top: -4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: 0.22s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: #07111f;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      box-shadow: 0 16px 40px rgba(215, 173, 85, 0.22);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 22px 55px rgba(215, 173, 85, 0.3);
+    }
+
+    .btn-ghost {
+      border-color: var(--line);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(215, 173, 85, 0.6);
+      color: var(--gold-soft);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 86px 0 54px;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 44px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid rgba(215, 173, 85, 0.35);
+      background: rgba(215, 173, 85, 0.09);
+      color: var(--gold-soft);
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6.2vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #fff, #f5d98f 55%, #c6dcff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-lead {
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 20px);
+      max-width: 670px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .metric {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      color: var(--white);
+      letter-spacing: -0.04em;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .profile-card {
+      position: relative;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.055)),
+        radial-gradient(circle at top, rgba(215, 173, 85, 0.16), transparent 48%);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-card:before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, rgba(215,173,85,0.42), transparent 35%, rgba(112,153,222,0.28));
+      opacity: 0.55;
+      pointer-events: none;
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding: 1px;
+      border-radius: var(--radius-xl);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .avatar-placeholder {
+      min-height: 430px;
+      border-radius: 24px;
+      background:
+        linear-gradient(150deg, rgba(215, 173, 85, 0.22), rgba(255,255,255,0.04)),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80") center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .avatar-placeholder:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 15%, rgba(7, 17, 31, 0.88) 100%);
+    }
+
+    .profile-caption {
+      position: absolute;
+      left: 44px;
+      right: 44px;
+      bottom: 42px;
+      z-index: 2;
+      padding: 20px;
+      border-radius: 20px;
+      background: rgba(7, 17, 31, 0.78);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--line);
+    }
+
+    .profile-caption h2 {
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      margin-bottom: 4px;
+    }
+
+    .profile-caption p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 34px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    .section-kicker {
+      color: var(--gold-soft);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 650px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--bg-card);
+      padding: 24px;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+    }
+
+    .card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(215, 173, 85, 0.12);
+      border: 1px solid rgba(215, 173, 85, 0.22);
+      color: var(--gold-soft);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .about-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .large-card {
+      min-height: 100%;
+      padding: 30px;
+    }
+
+    .large-card ul {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .large-card li {
+      display: flex;
+      gap: 12px;
+      color: var(--muted);
+    }
+
+    .check {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #07111f;
+      background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+      font-size: 14px;
+      font-weight: 900;
+      margin-top: 2px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+      position: relative;
+    }
+
+    .timeline-item {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .timeline-item span {
+      display: inline-block;
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item h3 {
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .reels-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .reel-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+    }
+
+    .reel-frame {
+      aspect-ratio: 9 / 16;
+      background:
+        linear-gradient(180deg, rgba(215, 173, 85, 0.22), rgba(9, 23, 42, 0.94)),
+        radial-gradient(circle at center, rgba(255,255,255,0.1), transparent 50%);
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .reel-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: 18px;
+      background: #000;
+    }
+
+    .reel-placeholder {
+      border: 1px dashed rgba(255,255,255,0.24);
+      border-radius: 18px;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      color: var(--muted);
+    }
+
+    .reel-placeholder strong {
+      color: var(--white);
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .reel-body {
+      padding: 18px;
+    }
+
+    .reel-body h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      letter-spacing: -0.03em;
+    }
+
+    .reel-body p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .cta {
+      padding: 0 0 80px;
+    }
+
+    .cta-box {
+      border: 1px solid rgba(215, 173, 85, 0.24);
+      border-radius: 34px;
+      padding: 42px;
+      background:
+        radial-gradient(circle at top left, rgba(215, 173, 85, 0.2), transparent 38%),
+        linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.055));
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.055em;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .section-heading,
+      .about-panel,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .cards,
+      .reels-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .profile-card {
+        max-width: 620px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 26px, var(--max-width));
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .hero-metrics,
+      .cards,
+      .reels-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .avatar-placeholder {
+        min-height: 360px;
+      }
+
+      .profile-caption {
+        left: 28px;
+        right: 28px;
+        bottom: 28px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand" aria-label="Andrew Hồ Anh - Tư duy tài sản">
+        <span class="brand-mark">A</span>
+        <span>
+          Andrew Hồ Anh
+          <small>Tư duy tài sản</small>
+        </span>
+      </a>
+
+      <div class="nav-links" aria-label="Điều hướng chính">
+        <a href="#about">Giới thiệu</a>
+        <a href="#expertise">Năng lực</a>
+        <a href="#goal">Mục tiêu</a>
+        <a href="#reels">Reels dự án</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">✦ Portfolio cá nhân | Real Estate Asset Advisor</div>
+          <h1>
+            Tư vấn bất động sản bằng
+            <span class="gradient-text">tư duy tài sản</span>,
+            không chỉ bằng cảm xúc.
+          </h1>
+
+          <p class="hero-lead">
+            Tôi là <strong>Andrew Hồ Anh</strong> — chuyên gia tư vấn và cố vấn tài sản bất động sản,
+            tập trung giúp khách hàng nhìn rõ giá trị thật, dòng tiền, pháp lý, vị trí và chiến lược
+            trước khi ra quyết định.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Kết nối tư vấn</a>
+            <a class="btn btn-ghost" href="#reels">Xem video dự án</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Các điểm nổi bật">
+            <div class="metric">
+              <strong>01</strong>
+              <span>Tư duy tài sản trước khi xuống tiền</span>
+            </div>
+            <div class="metric">
+              <strong>05+</strong>
+              <span>Nhóm tiêu chí đánh giá BĐS thực tế</span>
+            </div>
+            <div class="metric">
+              <strong>360°</strong>
+              <span>Góc nhìn: pháp lý, tài chính, thị trường</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Thẻ hồ sơ cá nhân">
+          <div class="avatar-placeholder"></div>
+          <div class="profile-caption">
+            <h2>Andrew Hồ Anh</h2>
+            <p>Chuyên gia tư vấn · Cố vấn tài sản bất động sản · Định hướng giảng viên đào tạo</p>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Giới thiệu</p>
+            <h2 class="section-title">Tôi không bán một căn nhà. Tôi giúp khách hàng đọc đúng một tài sản.</h2>
+          </div>
+          <p class="section-desc">
+            Bất động sản không chỉ là vị trí đẹp hay chiết khấu cao. Một quyết định tốt cần được soi qua dòng tiền,
+            pháp lý, thanh khoản, nhu cầu sử dụng thật và biên an toàn tài chính.
+          </p>
+        </div>
+
+        <div class="about-panel">
+          <article class="card large-card">
+            <div class="icon">🏙️</div>
+            <h3>Vai trò tư vấn</h3>
+            <p>
+              Tôi đồng hành cùng khách hàng trong quá trình đánh giá, lựa chọn và hoạch định phương án tài sản
+              bất động sản theo hướng thực tế, có kiểm chứng và phù hợp năng lực tài chính.
+            </p>
+
+            <ul>
+              <li><span class="check">✓</span><span>Phân tích mục tiêu mua: ở thật, tích sản, khai thác cho thuê hoặc đầu tư trung hạn.</span></li>
+              <li><span class="check">✓</span><span>Đánh giá vị trí, hạ tầng, tiện ích, cộng đồng cư dân và tiềm năng tăng trưởng.</span></li>
+              <li><span class="check">✓</span><span>Kiểm tra khả năng dòng tiền, tỷ lệ vay, áp lực trả nợ và vùng rủi ro.</span></li>
+              <li><span class="check">✓</span><span>Tư vấn cách ra quyết định tỉnh táo, tránh mua theo hiệu ứng đám đông.</span></li>
+            </ul>
+          </article>
+
+          <article class="card large-card">
+            <div class="icon">🧭</div>
+            <h3>Triết lý làm việc</h3>
+            <p>
+              Một thương vụ tốt không bắt đầu từ việc “căn nào đang hot”, mà bắt đầu từ câu hỏi:
+              tài sản này có phục vụ đúng chiến lược sống và chiến lược vốn của khách hàng hay không?
+            </p>
+
+            <ul>
+              <li><span class="check">✓</span><span>Không ép quyết định. Ưu tiên phân tích rõ trước khi tư vấn chọn sản phẩm.</span></li>
+              <li><span class="check">✓</span><span>Không thổi phồng lợi nhuận. Luôn đặt rủi ro và kịch bản xấu lên bàn trước.</span></li>
+              <li><span class="check">✓</span><span>Không chỉ nhìn giá bán. Phải nhìn tổng chi phí sở hữu, thanh khoản và khả năng thoát hàng.</span></li>
+              <li><span class="check">✓</span><span>Không tư vấn đại trà. Mỗi khách hàng cần một phương án tài sản riêng.</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Năng lực cốt lõi</p>
+            <h2 class="section-title">Từ thông tin dự án đến quyết định tài sản có cơ sở.</h2>
+          </div>
+          <p class="section-desc">
+            Tôi tập trung vào các điểm chạm quan trọng giúp khách hàng hiểu bản chất một sản phẩm bất động sản
+            trước khi đặt cọc hoặc sử dụng đòn bẩy tài chính.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">📊</div>
+            <h3>Phân tích tài chính</h3>
+            <p>Đánh giá vốn tự có, tỷ lệ vay, dòng tiền trả nợ, chi phí cơ hội và biên an toàn trước biến động lãi suất.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📍</div>
+            <h3>Đọc vị trí & hạ tầng</h3>
+            <p>Không chỉ nhìn khoảng cách. Cần hiểu hướng phát triển đô thị, kết nối vùng, tiện ích và lực cầu thật.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">⚖️</div>
+            <h3>Góc nhìn pháp lý</h3>
+            <p>Ưu tiên sự rõ ràng về hồ sơ, tiến độ, quyền sở hữu, nghĩa vụ tài chính và những điểm cần kiểm chứng.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏡</div>
+            <h3>Tư vấn sản phẩm</h3>
+            <p>So sánh loại hình căn hộ, nhà phố, biệt thự, shophouse theo mục tiêu sử dụng và chiến lược nắm giữ.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🎯</div>
+            <h3>Chiến lược tích sản</h3>
+            <p>Xây dựng lộ trình tài sản phù hợp từng giai đoạn: an cư, tích lũy, gia tăng giá trị và tối ưu dòng tiền.</p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🎥</div>
+            <h3>Truyền thông dự án</h3>
+            <p>Sản xuất nội dung ngắn, reels, livestream và phân tích dự án theo ngôn ngữ gần gũi, dễ hiểu, có chiều sâu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="goal">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Mục tiêu phát triển</p>
+            <h2 class="section-title">Trở thành giảng viên đào tạo về tư duy tài sản và tư vấn bất động sản.</h2>
+          </div>
+          <p class="section-desc">
+            Đích đến của tôi không chỉ là bán hàng giỏi, mà là hệ thống hóa trải nghiệm thị trường thành chương trình đào tạo
+            giúp đội ngũ sales và nhà đầu tư mới ra quyết định vững hơn.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>Giai đoạn 01</span>
+            <h3>Xây nền chuyên môn thực chiến</h3>
+            <p>Tích lũy case thực tế, chuẩn hóa checklist tư vấn, quy trình phân tích dự án, mẫu tính dòng tiền và bộ câu hỏi khai thác nhu cầu khách hàng.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Giai đoạn 02</span>
+            <h3>Xây dựng hệ nội dung đào tạo</h3>
+            <p>Phát triển giáo trình ngắn về tư duy tài sản, kỹ năng tư vấn không ép khách, phân tích chính sách bán hàng và quản trị rủi ro khi dùng đòn bẩy.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Giai đoạn 03</span>
+            <h3>Đào tạo đội ngũ & cộng đồng</h3>
+            <p>Triển khai workshop, livestream, video ngắn và các buổi chia sẻ chuyên đề dành cho sales bất động sản, khách hàng cá nhân và nhà đầu tư mới.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reels">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Video ngắn / Reels</p>
+            <h2 class="section-title">Khu vực nhúng video tiếp thị dự án.</h2>
+          </div>
+          <p class="section-desc">
+            Anh có thể thay phần placeholder bên dưới bằng link nhúng từ Facebook Reels, Instagram Reels, TikTok hoặc YouTube Shorts.
+            Mỗi video nên tập trung vào một thông điệp: vị trí, hạ tầng, tiện ích, chính sách hoặc dòng tiền.
+          </p>
+        </div>
+
+        <div class="reels-grid">
+          <article class="reel-card">
+            <div class="reel-frame">
+              <!--
+                CÁCH DÙNG:
+                Thay toàn bộ khối .reel-placeholder bên dưới bằng mã iframe nhúng video.
+                Ví dụ:
+                <iframe src="LINK_NHUNG_VIDEO_CUA_ANH" title="Reel dự án 01" allowfullscreen></iframe>
+              -->
+              <div class="reel-placeholder">
+                <div>
+                  <strong>Reel 01</strong>
+                  <span>Hook: Vì sao dự án này đáng xem?</span>
+                </div>
+              </div>
+            </div>
+            <div class="reel-body">
+              <h3>Góc nhìn tổng quan dự án</h3>
+              <p>Phù hợp cho video mở đầu: vị trí, quy mô, tiện ích và lý do khách hàng nên quan tâm.</p>
+            </div>
+          </article>
+
+          <article class="reel-card">
+            <div class="reel-frame">
+              <div class="reel-placeholder">
+                <div>
+                  <strong>Reel 02</strong>
+                  <span>Hook: Hạ tầng nào đang tạo lực đẩy?</span>
+                </div>
+              </div>
+            </div>
+            <div class="reel-body">
+              <h3>Hạ tầng & kết nối vùng</h3>
+              <p>Tập trung vào đường lớn, cao tốc, metro, và tác động đến khả năng tăng giá hoặc thanh khoản.</p>
+            </div>
+          </article>
+
+          <article class="reel-card">
+            <div class="reel-frame">
+              <div class="reel-placeholder">
+                <div>
+                  <strong>Reel 03</strong>
+                  <span>Hook: Mua để ở hay tích sản?</span>
+                </div>
+              </div>
+            </div>
+            <div class="reel-body">
+              <h3>Dòng tiền & phương án mua</h3>
+              <p>Phù hợp cho video phân tích vốn tự có, khoản vay, chính sách bán hàng và kịch bản tài chính.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Cần một góc nhìn tỉnh táo trước khi xuống tiền?</h2>
+            <p>
+              Hãy kết nối để cùng phân tích mục tiêu, ngân sách, khẩu vị rủi ro và lựa chọn bất động sản phù hợp.
+              Một quyết định lớn nên bắt đầu bằng một cuộc trao đổi đủ sâu.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="mailto:your-email@example.com">Gửi email tư vấn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Andrew Hồ Anh. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#goal">Mục tiêu</a>
+        <a href="#reels">Reels</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
